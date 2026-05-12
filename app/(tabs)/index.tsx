@@ -1,98 +1,122 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import SvgTxt from '@/components/svg-text';
+import VerticalImageShow from '@/components/vertical-image-show';
+import Data from "@/Data.json";
+import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { cssInterop } from 'nativewind';
+import { useRef } from 'react';
+import { Animated, Image, ScrollView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ms, vs } from 'react-native-size-matters';
+cssInterop(LinearGradient, {
+  className: {
+    target: "style",
+  },
+});
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+  const scrollY = useRef(new Animated.Value(0)).current
+  const imageOpacity = scrollY.interpolate({
+    inputRange: [0, 200], // เมื่อเลื่อนไปที่ระยะ 0 ถึง 200
+    outputRange: [0.1, 0.9], // ให้แผ่นสีดำเข้มขึ้นจาก 0% เป็น 80%
+    extrapolate: 'clamp',
+  })
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+  return (
+    <View className="flex-1 bg-[#101010] justify-start" >
+
+      {/* header */}
+      <SafeAreaView className="absolute top-2 left-0 right-0 z-10">
+        <View className='flex-row w-full justify-between px-4 items-center bg-transparent'>
+          <Ionicons name="menu" size={ms(30)} color="white" />
+          <Image source={require('@/assets/images/logo.png')} style={{ width: ms(30), height: ms(30) }} resizeMode="contain" />
+          <Ionicons name="search" size={ms(30)} color="white" />
+        </View>
+      </SafeAreaView>
+
+      <Animated.ScrollView
+        className="flex-1"
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: false },
+        )}
+        scrollEventThrottle={16}
+      >
+        {/* wallpaper */}
+        <View className='flex-1 justify-center items-center'>
+          <LinearGradient
+            colors={['#FFFF00', '#00BFFF', '#00FF00', '#8A2BE2', '#FF0000']}
+            start={{ x: 0, y: 0.5 }}
+            end={{ x: 1, y: 0.5 }}
+            className='p-[1.5px] rounded-3xl justify-center items-center z-10 absolute '>
+            <View className=' bg-white flex-row rounded-3xl justify-center items-center px-4 gap-1'>
+              <Text className='text-[#e5001a] font-bold text-xl'>
+                ● LIVE
+              </Text>
+            </View>
+          </LinearGradient>
+          <Image source={require('@/assets/images/wallpaper.jpg')} resizeMode="cover" style={{ width: '100%', height: vs(180) }} />
+          <LinearGradient
+            colors={['transparent', 'rgba(16,16,16,0.90)', 'black']}
+            style={{
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              bottom: -2,
+              height: 80,
+            }}
+          />
+          <Animated.View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: -1,
+              backgroundColor: 'black',
+              opacity: imageOpacity,
+            }}
+          />
+        </View>
+
+        <View className='flex-2  mx-4 mt-1 gap-y-2 '>
+          <View className='flex-row items-center gap-4'>
+            <View className='bg-[#e73733] py-1.5 px-3 rounded-md'>
+              <Text className="text-white text-xs">• กำลังรับชม</Text>
+            </View>
+            <Text className='text-white font-bold text-xl mb-1'>ปริศนาฟ้าแลบ</Text>
+          </View>
+          <Text className='text-[#78c5c4] text-xs '>เวลา 10.30 - 11.00 น.</Text>
+          <View className="flex-row items-center justify-end bg-gray-700 rounded-2xl p-6 overflow-hidden h-16">
+            <View className='bg-white rounded-2xl px-3 py-1.5'>
+              <Text className="text-[#274f83] text-md">ผังรายการ &gt;</Text>
+            </View>
+          </View>
+
+            {/* Top 10 รายการยอดนิยม */}
+          <View className='flex-row justify-between items-center'>
+            <Text className='text-white font-bold text-lg '>Top 10 รายการยอดนิยม</Text>
+            <Text className='text-white text-sm '>ดูเพิ่มเติม &gt;</Text>
+          </View>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}
+            contentContainerClassName="flex-row pl-2 space-x-6">
+            {Data.data.trending_shows.map((item, index) => {
+              return (
+                <View key={item.id} className='relative pb-6'>
+                  <View className='absolute -left-6 bottom-0 z-10'>
+                    <SvgTxt text={String(index+1)}/>
+                  </View>
+                  <VerticalImageShow url={item.poster_url} />
+                </View>
+              )
+            })}
+          </ScrollView>
+
+
+
+        </View>
+      </Animated.ScrollView>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
