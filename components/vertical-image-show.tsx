@@ -22,7 +22,7 @@ export default function VerticalImageShow({ url }: { url: string }) {
                             })
                     }
                 >
-                    <Image className='w-full h-full rounded-lg hover:bg-black' resizeMode="cover" source={{ uri: url }} />
+                    <Image className='w-full h-full rounded-xl hover:bg-black' resizeMode="cover" source={{ uri: url }} />
                 </View>
             )}
         </Pressable>

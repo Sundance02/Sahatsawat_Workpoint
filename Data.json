@@ -1,77 +1,96 @@
 {
   "data": {
-    "trending_shows": [
+    "shows": [
       {
         "id": "p001",
-        "title": "The Master Chef Thailand",
-        "poster_url": "https://lh6.googleusercontent.com/proxy/SMzZJi_AdOlujO9IOT7jMTl1osLhVv26tedT3Qv_VpgQZtSTRRUcX62GYlP-A_DJHG4geDem221QibqoKg8j6Cr5K5jkZkLdcLZS1-nHRlfA0guf8_D-EUlbpIWe5pM",
-        "rating": 4.8
+        "title": "ชิงร้อยชิงล้าน",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "พฤหัสบดี",
+        "live_time": "19.05-21.30",
+        "poster_url": "https://lh6.googleusercontent.com/proxy/SMzZJi_AdOlujO9IOT7jMTl1osLhVv26tedT3Qv_VpgQZtSTRRUcX62GYlP-A_DJHG4geDem221QibqoKg8j6Cr5K5jkZkLdcLZS1-nHRlfA0guf8_D-EUlbpIWe5pM"
       },
       {
         "id": "p002",
-        "title": "Voice of the Soul",
-        "poster_url": "https://images.workpointtoday.com/workpointtv/2016/11/01150623/%E0%B8%8B%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%9B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B3-860x520-1-1.png",
-        "rating": 4.5
+        "title": "ซูเปอร์หม่ำ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "เสาร์",
+        "live_time": "20.05-22.00",
+        "poster_url": "https://images.workpointtoday.com/workpointtv/2016/11/01150623/%E0%B8%8B%E0%B8%B8%E0%B8%9B%E0%B9%80%E0%B8%9B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%B3-860x520-1-1.png"
       },
       {
         "id": "p003",
-        "title": "Thai History Mystery",
-        "poster_url": "https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.9
+        "title": "ขำกลิ้งลิงกับหมา",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "อาทิตย์",
+        "live_time": "21.00-21.30",
+        "poster_url": "https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?q=80&w=1000&auto=format&fit=crop"
       },
       {
         "id": "p004",
-        "poster_url": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.2
+        "title": "คนอวดผี",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "จันทร์",
+        "live_time": "22.00-23.30",
+        "poster_url": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1000&auto=format&fit=crop"
       },
       {
         "id": "p005",
-        "title": "Midnight Snack",
-        "poster_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.6
+        "title": "อายุน้อยร้อยล้าน",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "อังคาร",
+        "live_time": "18.00-19.30",
+        "poster_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop"
       },
       {
         "id": "p006",
-        "title": "Wild Thailand",
-        "poster_url": "https://f.ptcdn.info/056/021/000/1404908485-1054756210-o.jpg",
-        "rating": 4.7
+        "title": "ปริศนาฟ้าแลบ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "พุธ",
+        "live_time": "18.00-19.30",
+        "poster_url": "https://f.ptcdn.info/056/021/000/1404908485-1054756210-o.jpg"
       },
       {
         "id": "p007",
-        "title": "Comedy Night Live",
-        "poster_url": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.1
+        "title": "ซูเปอร์จิ๋ว",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "อาทิตย์",
+        "live_time": "9.00-10.30",
+        "poster_url": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?q=80&w=1000&auto=format&fit=crop"
       },
       {
         "id": "p008",
-        "title": "Business Genius",
-        "poster_url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.4
+        "title": "แฟนพันธุ์แท้",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "พุธ",
+        "live_time": "20.00-22.00",
+        "poster_url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop"
       },
       {
         "id": "p009",
-        "title": "Underground Music",
-        "poster_url": "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.3
+        "title": "A185",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "พุธ",
+        "live_time": "00.00-01.30",
+        "poster_url": "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1000&auto=format&fit=crop"
       },
       {
         "id": "p010",
-        "title": "The Ghost Radio Story",
-        "poster_url": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop",
-        "rating": 4.9
+        "title": "BB88",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, nulla et fringilla tempor, sem enim feugiat metus, eget volutpat.",
+        "live_date": "พุธ",
+        "live_time": "01.00-03.30",
+        "poster_url": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop"
       }
     ],
     "recommended_videos": [
       {
         "id": "v101",
         "title": "วิธีทำส้มตำไทยฉบับดั้งเดิม (Som Tum Recipe)",
-        
         "thumbnail_url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&h=675&auto=format&fit=crop"
       },
       {
         "id": "v102",
         "title": "Vlog พาเที่ยวตลาดน้ำดำเนินสะดวก 2024",
-  
         "thumbnail_url": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1200&h=675&auto=format&fit=crop"
       },
       {

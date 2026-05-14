@@ -11,19 +11,20 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarActiveTintColor:"white",
+        tabBarStyle:{
+          backgroundColor:"#101010",
+          height:60,
+          borderTopWidth:0
+        }
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'ดูทีวีสด',
+          headerTintColor : "#4d4d4d",
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="tv.fill" color={color} 
+          />,
         }}
       />
     </Tabs>
