@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { Animated, Image, ImageSourcePropType, Text, View } from 'react-native';
-import { ms, vs } from 'react-native-size-matters';
+import { ms } from 'react-native-size-matters';
 
 export default function Hero({ scrollY, wallpaper_url, show_live_logo, opacityRange }: 
     { scrollY: Animated.Value, wallpaper_url: ImageSourcePropType, show_live_logo: Boolean, opacityRange:number }) {
@@ -24,8 +24,8 @@ export default function Hero({ scrollY, wallpaper_url, show_live_logo, opacityRa
                     </View>
                 </LinearGradient>
             }
-            <Image className='w-full' source={wallpaper_url}
-                resizeMode="cover" style={{ height: vs(260) }} />
+            <Image className='w-full h-[460px] md:h-[560px]' source={wallpaper_url}
+                resizeMode="cover"/>
             <LinearGradient
                 colors={['transparent', 'rgba(16,16,16,0.92)', '#101010']}
                 style={{

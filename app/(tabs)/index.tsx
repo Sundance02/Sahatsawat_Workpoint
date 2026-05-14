@@ -16,7 +16,7 @@ cssInterop(LinearGradient, {
 
 export default function HomeScreen() {
   const scrollY = useRef(new Animated.Value(0)).current
-  const opacityRange = vs(190)
+  const opacityRange = vs(240)
 
   return (
     <View className="flex-1 bg-[#101010] justify-start">
